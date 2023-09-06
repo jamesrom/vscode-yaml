@@ -114,8 +114,8 @@ It is possible to specify a yaml schema using a modeline. Schema url can be a re
 `yaml.schemas`  applies a schema to a file. In other words, the schema (placed on the left) is applied to the glob pattern on the right. Your schema can be local or online. Your schema must be a relative path and not an absolute path. The entrance point for `yaml.schemas` is a location in [user and workspace settings](https://code.visualstudio.com/docs/getstarted/settings#_creating-user-and-workspace-settings)
 
 When associating a schema it should follow the format below
-```JSON
-"yaml.schemas": {
+```jsonc
+yaml.schemas: {
     "url": "globPattern",
     "Kubernetes": "globPattern"
 }
@@ -123,7 +123,7 @@ When associating a schema it should follow the format below
 
 e.g.
 
-```json
+```jsonc
 yaml.schemas: {
     "https://json.schemastore.org/composer": "/*"
 }
@@ -131,7 +131,7 @@ yaml.schemas: {
 
 e.g.
 
-```json
+```jsonc
 yaml.schemas: {
     "kubernetes": "/myYamlFile.yaml"
 }
@@ -139,7 +139,7 @@ yaml.schemas: {
 
 e.g.
 
-```json
+```jsonc
 yaml.schemas: {
     "https://json.schemastore.org/composer": "/*",
     "kubernetes": "/myYamlFile.yaml"
@@ -148,7 +148,7 @@ yaml.schemas: {
 
 On Windows with full path:
 
-```json
+```jsonc
 yaml.schemas: {
     "C:\\Users\\user\\Documents\\custom_schema.json": "someFilePattern.yaml",
     "file:///C:/Users/user/Documents/custom_schema.json": "someFilePattern.yaml",
@@ -157,7 +157,7 @@ yaml.schemas: {
 
 On Mac/Linux with full path:
 
-```json
+```jsonc
 yaml.schemas: {
     "/home/user/custom_schema.json": "someFilePattern.yaml",
 }
@@ -165,13 +165,13 @@ yaml.schemas: {
 
 Since `0.11.0` YAML Schemas can be used for validation:
 
-```json
+```jsonc
  "/home/user/custom_schema.yaml": "someFilePattern.yaml"
 ```
 
 A schema can be associated with multiple globs using a json array, e.g.
 
-```json
+```jsonc
 yaml.schemas: {
     "kubernetes": ["filePattern1.yaml", "filePattern2.yaml"]
 }
@@ -179,8 +179,8 @@ yaml.schemas: {
 
 e.g.
 
-```json
-"yaml.schemas": {
+```jsonc
+yaml.schemas: {
     "http://json.schemastore.org/composer": ["/*"],
     "file:///home/johnd/some-schema.json": ["some.yaml"],
     "../relative/path/schema.json": ["/config*.yaml"],
@@ -190,15 +190,15 @@ e.g.
 
 e.g.
 
-```JSON
-"yaml.schemas": {
+```jsonc
+yaml.schemas: {
     "kubernetes": ["/myYamlFile.yaml"]
 }
 ```
 
 e.g.
-```json
-"yaml.schemas": {
+```jsonc
+yaml.schemas: {
     "http://json.schemastore.org/composer": ["/*"],
     "kubernetes": ["/myYamlFile.yaml"]
 }
@@ -221,7 +221,7 @@ My_second_project:
 
 You must then associate schemas relative to the root of the multi root workspace project.
 
-```json
+```jsonc
 yaml.schemas: {
     "My_first_project/my_schema.json": "test.yaml",
     "My_second_project/my_schema2.json": "test2.yaml"
